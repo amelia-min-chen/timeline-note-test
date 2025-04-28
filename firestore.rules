@@ -1,0 +1,10 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 允許讀寫 notes 集合中的所有文檔
+    match /notes/{noteId} {
+      allow read, write: if true;
+    }
+  }
+} 
